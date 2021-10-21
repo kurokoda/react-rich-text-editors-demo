@@ -64,29 +64,32 @@ class DraftRichTextEditor extends React.Component {
     }
 
     return (
-      <div className="RichEditor-root">
-        <BlockStyleControls
-          editorState={editorState}
-          onToggle={this.toggleBlockType}
-        />
-        <InlineStyleControls
-          editorState={editorState}
-          onToggle={this.toggleInlineStyle}
-        />
-        <div className={className} onClick={this.focus}>
-          <Editor
-            blockStyleFn={getBlockStyle}
-            customStyleMap={styleMap}
+      <>
+        <section>Quill Rich Text Editor</section>
+        <div className="RichEditor-root">
+          <BlockStyleControls
             editorState={editorState}
-            handleKeyCommand={this.handleKeyCommand}
-            keyBindingFn={this.mapKeyToEditorCommand}
-            onChange={this.onChange}
-            placeholder="Tell a story..."
-            ref="editor"
-            spellCheck={true}
+            onToggle={this.toggleBlockType}
           />
+          <InlineStyleControls
+            editorState={editorState}
+            onToggle={this.toggleInlineStyle}
+          />
+          <div className={className} onClick={this.focus}>
+            <Editor
+              blockStyleFn={getBlockStyle}
+              customStyleMap={styleMap}
+              editorState={editorState}
+              handleKeyCommand={this.handleKeyCommand}
+              keyBindingFn={this.mapKeyToEditorCommand}
+              onChange={this.onChange}
+              placeholder="Tell a story..."
+              ref="editor"
+              spellCheck={true}
+            />
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
