@@ -1,8 +1,15 @@
-import React from 'react';
+import React from "react";
+import { DraftJSRichTextEditor } from "./components/draftJS";
+import { QuillRichTextEditor } from "./components/quill";
+import { SlateRichTextEditor } from "./components/slate";
 
 function App() {
   return (
-    <>Hello RTE</>
+    <>
+      <DraftJSRichTextEditor />
+      <QuillRichTextEditor />
+      <SlateRichTextEditor />
+    </>
   );
 }
 
