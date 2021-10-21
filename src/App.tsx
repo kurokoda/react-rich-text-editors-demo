@@ -1,5 +1,5 @@
 import React from "react";
-import { DraftRichTextEditor } from "./components/draft";
+import { DraftRichTextEditor } from "./components/draft/draft";
 import { QuillRichTextEditor } from "./components/quill";
 import { SlateRichTextEditor } from "./components/slate";
 import styled from "styled-components";
