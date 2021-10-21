@@ -1,5 +1,5 @@
 import React from "react";
-import { DraftJSRichTextEditor } from "./components/draftJS";
+import { DraftRichTextEditor } from "./components/draft";
 import { QuillRichTextEditor } from "./components/quill";
 import { SlateRichTextEditor } from "./components/slate";
 import styled from "styled-components";
@@ -18,7 +18,7 @@ function App() {
   return (
     <ApplicationContainer>
       <RTEContainer>
-        <DraftJSRichTextEditor />
+        <DraftRichTextEditor />
       </RTEContainer>
       <RTEContainer>
         <QuillRichTextEditor />
