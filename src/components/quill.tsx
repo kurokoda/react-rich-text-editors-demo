@@ -1,6 +1,6 @@
 const QuillRichTextEditor = () => {
     return (
-        <>Quill Rich Text Editor</>
+        <section>Quill Rich Text Editor</section>
     )
 }
 

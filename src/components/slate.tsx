@@ -1,6 +1,6 @@
 const SlateRichTextEditor = () => {
     return (
-        <>Slate Rich Text Editor</>
+        <section>Slate Rich Text Editor</section>
     )
 }
 

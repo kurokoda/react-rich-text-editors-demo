@@ -2,14 +2,31 @@ import React from "react";
 import { DraftJSRichTextEditor } from "./components/draftJS";
 import { QuillRichTextEditor } from "./components/quill";
 import { SlateRichTextEditor } from "./components/slate";
+import styled from "styled-components";
+
+const ApplicationContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  margin: 20px 1rem;
+`;
+
+const RTEContainer = styled.section`
+  margin-bottom: 10px;
+`;
 
 function App() {
   return (
-    <>
-      <DraftJSRichTextEditor />
-      <QuillRichTextEditor />
-      <SlateRichTextEditor />
-    </>
+    <ApplicationContainer>
+      <RTEContainer>
+        <DraftJSRichTextEditor />
+      </RTEContainer>
+      <RTEContainer>
+        <QuillRichTextEditor />
+      </RTEContainer>
+      <RTEContainer>
+        <SlateRichTextEditor />
+      </RTEContainer>
+    </ApplicationContainer>
   );
 }
 

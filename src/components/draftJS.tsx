@@ -1,6 +1,6 @@
 const DraftJSRichTextEditor = () => {
     return (
-        <>Draft JS Rich Text Editor</>
+        <section>Draft JS Rich Text Editor</section>
     )
 }
 
