@@ -1,35 +1,40 @@
-import React from "react";
-import { DraftTokenExample } from "./components/draft/tokenExample";
-import { DraftRichTextEditor } from "./components/draft";
-import { QuillRichTextEditor } from "./components/quill";
-import { SlateRichTextEditor } from "./components/slate";
-import styled from "styled-components";
-
-const ApplicationContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  margin: 20px 1rem;
-`;
-
-const RTEContainer = styled.section`
-  margin-bottom: 10px;
-`;
+import { Nav } from "react-bootstrap";
+import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
+import { DraftPage } from "./pages/draftPage";
+import { QuillPage } from "./pages/quillPage";
+import { SlatePage } from "./pages/slatePage";
+import { ApplicationContainer } from "./styledComponents/applicationContainer";
 
 function App() {
   return (
     <ApplicationContainer>
-       <RTEContainer>
-        <DraftTokenExample />
-      </RTEContainer>
-      <RTEContainer>
-        <DraftRichTextEditor />
-      </RTEContainer>
-      <RTEContainer>
-        <QuillRichTextEditor />
-      </RTEContainer>
-      <RTEContainer>
-        <SlateRichTextEditor />
-      </RTEContainer>
+      <Nav activeKey="/draft">
+        <Nav.Item>
+          <Nav.Link href="/draft">Draft</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/quill">Quill</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/slate">Slate</Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/draft">
+            <DraftPage />
+          </Route>
+          <Route path="/quill">
+            <QuillPage />
+          </Route>
+          <Route path="/slate">
+            <SlatePage />
+          </Route>
+          <Route path="/">
+            <Redirect to="/draft" />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </ApplicationContainer>
   );
 }

@@ -69,7 +69,6 @@ const DraftRichTextEditor = (props) => {
 
   return (
     <>
-      <h3>Draft Rich Text Editor</h3>
       <div className="RichEditor-root">
         <BlockStyleControls
           editorState={editorState}

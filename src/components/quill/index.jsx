@@ -84,7 +84,6 @@ class QuillRichTextEditor extends Component {
   render() {
     return (
       <>
-        <h3>Quill Rich Text Editor</h3>
         <div className="text-editor">
           {this.state.editorHtml}
           <ReactQuill
