@@ -1,6 +1,7 @@
 import React from "react";
-import { DraftRichTextEditor } from "./components/draft/simple";
-import { QuillRichTextEditor } from "./components/quill/custom";
+import { DraftTokenExample } from "./components/draft/tokenExample";
+import { DraftRichTextEditor } from "./components/draft";
+import { QuillRichTextEditor } from "./components/quill";
 import { SlateRichTextEditor } from "./components/slate";
 import styled from "styled-components";
 
@@ -17,6 +18,9 @@ const RTEContainer = styled.section`
 function App() {
   return (
     <ApplicationContainer>
+       <RTEContainer>
+        <DraftTokenExample />
+      </RTEContainer>
       <RTEContainer>
         <DraftRichTextEditor />
       </RTEContainer>
