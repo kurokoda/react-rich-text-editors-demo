@@ -1,7 +1,7 @@
 import { Tab, Tabs } from "react-bootstrap";
 
-import { DraftRichTextEditor } from "../components/draft";
-import { DraftTokenExample } from "../components/draft/tokenExample";
+import { DraftRichTextEditor } from "../components/editors/draft/simple";
+import { DraftTokenExample } from "../components/editors/draft/tokenExample";
 
 const DraftPage = () => {
   return (

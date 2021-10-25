@@ -1,6 +1,6 @@
 import { Tab, Tabs } from "react-bootstrap";
 
-import { SlateRichTextEditor } from "../components/slate";
+import { SlateRichTextEditor } from "../components/editors/slate/simple";
 
 const SlatePage = () => {
   return (

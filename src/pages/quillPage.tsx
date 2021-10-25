@@ -1,6 +1,6 @@
 import { Tab, Tabs } from "react-bootstrap";
 
-import { QuillRichTextEditor } from "../components/quill";
+import { QuillRichTextEditor } from "../components/editors/quill/simple";
 
 const QuillPage = () => {
   return (
