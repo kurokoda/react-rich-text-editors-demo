@@ -11,21 +11,19 @@ class QuillRichTextEditor extends Component {
     super(props);
 
     this.setEditorHtml = this.setEditorHtml.bind(this);
+    this.addImage = this.addImage.bind(this);
+    this.addTokenString = this.addTokenString.bind(this);
+    this.delay = this.delay.bind(this);
     this.state = { editorHtml: "" };
     this.modules = {
       toolbar: {
         container: [
-          [
-            { header: "1" },
-            { header: "2" },
-            { header: [3, 4, 5, 6] },
-            { font: [] },
-          ],
+          [{ header: [1, 2, 3, 4, 5, 6] }, { font: [] }],
           [{ size: [] }],
           ["bold", "italic", "underline", "strike", "blockquote"],
           [{ list: "ordered" }, { list: "bullet" }],
           ["link", "image", "video"],
-          ["token"],
+          [{ token: "token" }],
           ["clean"],
           ["code-block"],
         ],
@@ -37,15 +35,20 @@ class QuillRichTextEditor extends Component {
     };
   }
 
+  async delay(duration) {
+    await new Promise((res) => setTimeout(res, duration));
+    return "Hell Yes";
+  }
+
   addImage() {
-    const editor = this.quill;
+    const editor = this.quill.editor;
     const input = document.createElement("input");
 
     input.setAttribute("type", "file");
     input.setAttribute("accept", "image/*");
     input.click();
 
-    input.onchange = () => {
+    input.onchange = async () => {
       const file = input.files[0];
       console.log("editor", editor);
       // replace this with an async/await call to an image uploader that returns a URL
@@ -58,17 +61,20 @@ class QuillRichTextEditor extends Component {
         "image",
         `${window.location.origin}/images/loaders/placeholder.gif`
       );
-
       editor.setSelection(range.index + 1);
 
-      editor.deleteText(range.index, 1);
+      await this.delay(3000);
 
+      editor.deleteText(range.index, 1);
       editor.insertEmbed(range.index, "image", imageUrl);
+      editor.setSelection(range.index + 1);
     };
   }
 
   addTokenString() {
-    console.log("Adding token");
+    const editor = this.quill.editor;
+    const range = editor.getSelection(true);
+    editor.insertText(range.index, "{{token}}");
   }
 
   setEditorHtml(editorHtml) {
@@ -90,6 +96,7 @@ class QuillRichTextEditor extends Component {
               this.quill = ref;
             }}
           />
+          <button onClick={this.addImage}>Add Image</button>
         </div>
       </>
     );
