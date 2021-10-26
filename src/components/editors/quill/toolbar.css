@@ -1,16 +1,16 @@
-.ql-picker.ql-insertCustomTags {
-  width: 90px;
+.ql-picker.ql-token {
+  width: 120px;
 }
 
-.ql-picker.ql-insertCustomTags .ql-picker-item::before,
-.ql-picker.ql-insertCustomTags .ql-picker-label::before {
+.ql-picker.ql-token .ql-picker-item::before,
+.ql-picker.ql-token .ql-picker-label::before {
   content: "Custom";
 }
 
-.ql-picker.ql-insertCustomTags [data-value="userName"]::before {
-  content: "Name";
+.ql-picker.ql-token [data-value="userName"]::before {
+  content: "User: Name";
 }
 
-.ql-picker.ql-insertCustomTags [data-value="userAddress"]::before {
-  content: "Address";
+.ql-picker.ql-token [data-value="userAddress"]::before {
+  content: "User: Address";
 }

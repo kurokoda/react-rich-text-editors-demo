@@ -40,7 +40,6 @@ function addImage() {
 }
 
 function addToken(token) {
-  console.log("Token");
   const wrappedToken = `{{${token}}}`;
 
   const cursorPosition = this.quill.getSelection().index;
@@ -48,9 +47,6 @@ function addToken(token) {
   this.quill.setSelection(cursorPosition + wrappedToken.length);
 }
 
-/*
- * Editor component with custom toolbar and content containers
- */
 class CustomEditor extends React.Component {
   constructor(props) {
     super(props);
@@ -62,7 +58,7 @@ class CustomEditor extends React.Component {
         icons,
         handlers: {
           image: addImage,
-          insertCustomTags: addToken,
+          token: addToken,
         },
       },
     };
