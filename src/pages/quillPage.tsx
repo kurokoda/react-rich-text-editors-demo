@@ -1,21 +1,13 @@
 import { Tab, Tabs } from "react-bootstrap";
-
-import { EditorQuillInsertImageComponent } from "../components/editors/quill/insertImage/insertImageEditor";
-import { EditorQuillInsertTokenComponent } from "../components/editors/quill/insertToken/insertTokenEditor";
+import { CustomEditor } from "../components/editors/quill/custom/customEditor";
 
 const QuillPage = () => {
   return (
-    <Tabs defaultActiveKey="insertImageComponent" className="mb-3" id="quill-rte-examples">
-      <Tab eventKey="insertImageComponent" title="Insert Image (C)">
+    <Tabs defaultActiveKey="custom" className="mb-3" id="quill-rte-examples">
+       <Tab eventKey="custom" title="Custom Editor">
         <>
-          <h5>Quill JS : Insert Image (React Component)</h5>
-          <EditorQuillInsertImageComponent />
-        </>
-      </Tab>
-      <Tab eventKey="insertToken" title="Insert Token">
-        <>
-          <h5>Quill JS : Insert Token (React Component)</h5>
-          <EditorQuillInsertTokenComponent />
+          <h5>Quill JS : Custom Editor</h5>
+          <CustomEditor />
         </>
       </Tab>
     </Tabs>
